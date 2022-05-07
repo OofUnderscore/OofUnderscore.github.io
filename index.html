@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-16" />
+       <title>Video Outline Guessing Game </title>
+</head>
+<body>
+    <script>
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min+1) ) + min;
+    }
+
+    </script>
+    
+<div class="refreshcontainer" style="text-align: center;">
+    <button id="refreshbutton"onclick="refresh()"style="display:inline-block;background-color: #d3d3d3; color: #020202 ;width: 300px; height: 50px;border-radius: 20px;">Refresh</button>
+</div>
+
+<div class='videocontainer' style="text-align: center;">
+    <video id="video"style="position:relative; top: 20px; border-radius: 20px; "id="video" class="animation" controls autoplay muted></video>
+    <script>
+        $( document ).ready(function() {
+        $('video.animation').removeAttr('controls');
+        });
+        var randomnumber = getRandomInt(0, 1);
+        window.alert(randomnumber);
+        var video = document.getElementById("video");
+        switch(randomnumber) {
+            case 0:
+                video.src = "https://v.redd.it/s0ns5sktptx81/DASH_480.mp4?source=fallback";
+                break;
+            case 1:
+                video.src = "https://v.redd.it/ejfhkvfp26w81/DASH_480.mp4?source=fallback";
+                break;
+        }
+
+        document.getElementById('video').play();
+    </script>
+</div>
+</body>
+</html>
