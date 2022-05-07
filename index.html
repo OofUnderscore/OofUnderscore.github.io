@@ -21,7 +21,9 @@
 </div>
 
 <div class='videocontainer' style="text-align: center;">
-    <video id="video"style="position:relative; top: 20px; border-radius: 20px; "id="video" class="animation" controls autoplay muted></video>
+    <div class="video-description">
+        <img id="image"style="position:relative; top: 20px; border-radius: 20px;;z-index: 1000;width: 100px; height: 100px;"src="https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif" alt="failed to load outline image." loading="lazy">
+    <video id="video"style="z-index: 100;position:relative; top: 20px; border-radius: 20px; "id="video" class="animation" controls autoplay muted></video>
     <script>
         $( document ).ready(function() {
         $('video.animation').removeAttr('controls');
@@ -29,13 +31,17 @@
         var randomnumber = getRandomInt(0, 1);
         window.alert(randomnumber);
         var video = document.getElementById("video");
+        var image = document.getElementById("image");
         switch(randomnumber) {
             case 0:
                 video.src = "https://v.redd.it/s0ns5sktptx81/DASH_480.mp4?source=fallback";
                 break;
             case 1:
                 video.src = "https://v.redd.it/ejfhkvfp26w81/DASH_480.mp4?source=fallback";
-                break;
+                video.style = "z-index: 100;position:relative; top: 20px; border-radius: 20px;"
+                console.log(document.getElementById('image'));
+                image.src = "images/vid1.png";
+                image.style="position:relative; top: 20px; border-radius: 20px;;z-index: 1000;";
         }
 
         document.getElementById('video').play();
